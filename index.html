@@ -4,27 +4,41 @@
     <title>
       Shopping List
     </title>
+    <script src="./js/application.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="m-4">
     <header>
       <h1>
         Shopping List
       </h1>
     </header>
-    <main class="container">
+    <main>
       <form>
           <label>
             Add an item
           </label>
-          <input type="text" placeholder="e.g., broccoli">
-          <button type="submit">
+          <input type="text" id="item_name_field" placeholder="e.g., broccoli">
+          <button type="button" id="add" class="btn btn-secondary">
             Add item
           </button>
       </form>
     </main>
-    <section class="results">
-      <ul>
-      </ul>
+    <section class="results mt-4">
+      <ul class="list-group" id="items"></ul>
     </section>
   </body>
+  <template id="item_template">
+    <li class="list-group-item list-group-item-primary m-2">
+      <p class="item-name d-block font-italic"></p>
+      <div class="buttons d-block">
+        <button type="button" class="btn btn-light check">
+          check
+        </button>
+        <button type="button" class="btn btn-light delete">
+          delete
+        </button>
+      </div>
+    </li>
+  </template>
 </html>
